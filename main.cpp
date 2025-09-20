@@ -48,7 +48,7 @@ public:
 class CodeParser : public FileParser {
 public:
     string parse(const string& filepath) override {
-        return TxtParser().parse(filepath); // Same parsing for simplicity
+        return TxtParser().parse(filepath);
     }
 };
 
@@ -67,7 +67,7 @@ FileParser* getParser(const string& filename) {
         string ext = filename.substr(filename.size() - 5);
         if (ext == ".java" || ext == ".cs") return new CodeParser();
     }
-    return nullptr; // unsupported
+    return nullptr; 
 }
 
 // ---------------- Indexer ----------------
